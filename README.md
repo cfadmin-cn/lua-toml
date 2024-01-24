@@ -18,5 +18,5 @@
 
 ## License
 
-  [MIT](https://github.com/cfadmin-cn/lua-toml)
+  [MIT](https://github.com/cfadmin-cn/lua-toml/blob/master/LICENSE)
   
