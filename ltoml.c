@@ -4,7 +4,7 @@
 */
 #define LUA_LIB
 
-#include <xrio.h>
+#include <core.h>
 #include "toml.h"
 
 static inline void toml_to_lua_array(lua_State *L, toml_array_t* array);
