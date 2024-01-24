@@ -45,7 +45,7 @@ static inline void toml_to_lua_array(lua_State *L, toml_array_t* array)
     o = toml_string_at(array, i);
     if (o.ok) {
       lua_pushstring(L, o.u.s); lua_rawseti(L, -2, i+1);
-      xrio_free(o.u.s);
+      xfree(o.u.s);
       continue;
     }
     o = toml_timestamp_at(array, i);
@@ -72,7 +72,7 @@ static inline void toml_to_lua_array(lua_State *L, toml_array_t* array)
       if (o.u.ts->millisec) {
         lua_pushinteger(L, *o.u.ts->millisec); lua_setfield(L, -2, "ms");
       }
-      xrio_free(o.u.ts); lua_rawseti(L, -2, i+1);
+      xfree(o.u.ts); lua_rawseti(L, -2, i+1);
       continue;
     }
   }
@@ -116,7 +116,7 @@ static inline void toml_to_lua_table(lua_State *L, toml_table_t* table)
     o = toml_string_in(table, key);
     if (o.ok) {
       lua_pushstring(L, o.u.s); lua_setfield(L, -2, key);
-      xrio_free(o.u.s);
+      xfree(o.u.s);
       continue;
     }
     o = toml_timestamp_in(table, key);
@@ -143,7 +143,7 @@ static inline void toml_to_lua_table(lua_State *L, toml_table_t* table)
       if (o.u.ts->millisec) {
         lua_pushinteger(L, *o.u.ts->millisec); lua_setfield(L, -2, "ms");
       }
-      xrio_free(o.u.ts); lua_setfield(L, -2, key);
+      xfree(o.u.ts); lua_setfield(L, -2, key);
       continue;
     }
   }
