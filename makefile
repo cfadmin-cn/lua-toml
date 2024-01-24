@@ -12,9 +12,9 @@ LIBS = -L../ -L../../ -L../../../
 CFLAGS = -Wall -O3 -fPIC --shared -Wl,-rpath,. -Wl,-rpath,..
 
 rebuild:
-	@$(CC) -o ini.so ltoml.c toml.c $(CFLAGS) $(INCLUDES) $(LIBS) -lcore
+	@$(CC) -o toml.so ltoml.c toml.c $(CFLAGS) $(INCLUDES) $(LIBS) -lcore
 	@mv *.so ../
 
 build:
-	@$(CC) -o ini.so ltoml.c toml.c $(CFLAGS) $(INCLUDES) $(LIBS) -lcore
+	@$(CC) -o toml.so ltoml.c toml.c $(CFLAGS) $(INCLUDES) $(LIBS) -lcore
 	@mv *.so ../
